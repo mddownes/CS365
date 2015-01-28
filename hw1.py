@@ -41,14 +41,28 @@ def printByteNumber(number):
 
 def printHex(list):
 	for x in range(0,len(list)):
+
 	 if x == 7 or x == 15:
-		 print ("%02x"%ord(list[x]), end ="  ")
+	 	if list[x] == ".":
+	 	  print("%02x"%0,end = "  ")
+	 	else:
+		  print ("%02x"%ord(list[x]), end ="  ")
 	 else:
-		 print ("%02x"%ord(list[x]), end =" ")
+	  if list[x] == ".":
+	   print("%02x"%0,end = " ")
+	  else:
+	   print ("%02x"%ord(list[x]), end =" ")
+
 	if len(list) < 16:
 	 for x in range(0,(16-len(list))):
 	 	print("%s"%"  ", end = " ")
-	 print(end = " ")
+	 if len(list) < 8:
+	  print(end = "  ")
+	 else:
+	  print(end = " ")
+	
+
+
 
 
 def printAscii(asciiList):
