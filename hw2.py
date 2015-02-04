@@ -21,18 +21,24 @@ def strings(file,min):
 		sys.exit()
 
 	word = ''
+	count = 0
+
 	while data:
 	 for d in data:
 	 	if d > 32 and d < 127:
 	 	 word += "%c"%d
-	 	if d == 32 or d == 10:
+	 	 count = 0
+	 	elif d == 0 and word != '':
+	 	 count +=1
+
+	 	if count == 2:
 	 	 if len(word) >= min:
-	 	 	print("%s"% word)
-	 	 	word = ''
+	 	  print("%s"% word)
+	 	  word = ''
+	 	  count = 0
 	 	 else:
-	 	 	print("")
-
-
+	 	  word = ''
+	 	  
 	 try:
 	 	data = file.read(16)
 	 except:
