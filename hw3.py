@@ -24,15 +24,34 @@ def main():
 	  while 1:
 	   (marker,) = unpack(">H",file.read(2))
 	   (size,) = unpack(">H",file.read(2))
-	   file.read(size-2)
+	   if size > 6:
+	   	(exif,) = unpack(">L",file.read(4))
+	   	(endian,) = unpack(">H", file.read(2))
+	   else:
+	   	file.read(2)
+
 	   
 	   print("[0x%04X]"%int(distance), end = "")
-	   distance = distance + size + 2
 	   print(" Marker 0x%04X"%int(marker), end = "")
 	   print(" size=0x%04X"%int(size))
 	   
+
+	   if hex(exif) == "0x45786966":
+	    if hex(endian) == "0x0":
+	     print("EXIF")
+	    else:
+	   	 print("Error: Not Big Endian")
+	   	 sys.exit()
+
+	   
 	   if hex(marker) == "0xffda":
 	    break
+	   else:
+	    if size > 6:
+	   	 file.read(size-8)
+	   	 distance = distance + size + 2
+	    else:
+	     distance = distance + size + 2	
 	 else:
 	  print("Error: Not in JPEG Format!")
 	  sys.exit()
