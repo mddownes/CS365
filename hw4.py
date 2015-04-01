@@ -92,7 +92,7 @@ def fsstat(file):
 	#prints root directory based on the start and end previously calculated
 	print("** Root Directory: %s - %s"%(rootDirStart,rootDirEnd))
 	#prints cluster area which starts after the root directory and goes to the total range image
-	print("** Cluster Area: %s - %s"%(rootDirEnd,totalRangeImage))
+	print("** Cluster Area: %s - %s"%(rootDirEnd+1,totalRangeImage))
 	#prints the non-clustered area which is the reamining clusters
 	print("** Non-clustered: %s - %s"%(totalRange,totalRange))
 	#formatting
