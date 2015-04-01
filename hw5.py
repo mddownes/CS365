@@ -71,7 +71,7 @@ def basic_mft(mft,entry):
 	signature = bytes.decode(mft[0:4])
 	(offset_fixupArray,) = unpack("<H",mft[4:6])
 	(entries_fixupArray,) = unpack("<H",mft[6:8])
-	fixup_sig = mft[offset_fixupArray:offset_fixupArray+entries_fixupArray]
+	fixup_sig = mft[offset_fixupArray+1:offset_fixupArray+1+entries_fixupArray+1]
 	log_sequence = getSigned(mft[8:15])	
 	(sequence,) = unpack("<H",mft[16:18])
 	(link_count,) = unpack("<H",mft[18:20])
@@ -81,12 +81,13 @@ def basic_mft(mft,entry):
 	(allocated_mft,) = unpack("<L",mft[28:32])
 	file_reference = getSigned(mft[32:39])
 	(next_attr_id,) = unpack("<H",mft[40:42])
-#replace the fixup values
+#replace the fixup values, in little endian so bytes are switched
 	mft = bytearray(mft)
-	mft[510] = fixup_sig[0]
-	mft[511] = fixup_sig[1]
-	mft[1022] = fixup_sig[0]
-	mft[1023] = fixup_sig[1]
+	mft[510] = fixup_sig[1]
+	mft[511] = fixup_sig[0]
+	mft[1022] = fixup_sig[3]
+	mft[1023] = fixup_sig[2]
+
 
 #this is so nothing is outputed for entry 0 when it gets parsed to get the runlist, it only outputs for specified entries
 	if(entry != 0):
