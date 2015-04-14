@@ -1,0 +1,139 @@
+student@student-326-VirtualBox:~/Desktop/cs453/P2$ ./prog2
+-----  Stop and Wait Network Simulator Version 1.1 -------- 
+
+Enter the number of messages to simulate: 10
+Enter  packet loss probability [enter 0.0 for no loss]:.1
+Enter packet corruption probability [0.0 for no corruption]:.3
+Enter average time between messages from sender's layer5 [ > 0.0]:1000
+Enter TRACE:2
+
+EVENT time: 1870.573975,  type: 1, fromlayer5  entity: 0
+A Sent pck0 to B
+          TOLAYER3: packet being corrupted
+
+EVENT time: 1876.039062,  type: 2, fromlayer3  entity: 1
+Packet from A was corrupted
+
+EVENT time: 3512.484131,  type: 1, fromlayer5  entity: 0
+A Sent pck0 to B
+          TOLAYER3: packet being corrupted
+
+EVENT time: 3521.120361,  type: 2, fromlayer3  entity: 1
+Packet from A was corrupted
+
+EVENT time: 4452.842773,  type: 1, fromlayer5  entity: 0
+A Sent pck0 to B
+          TOLAYER3: packet being corrupted
+
+EVENT time: 4457.310059,  type: 2, fromlayer3  entity: 1
+Packet from A was corrupted
+
+EVENT time: 5324.238281,  type: 1, fromlayer5  entity: 0
+A Sent pck0 to B
+
+EVENT time: 5333.666504,  type: 2, fromlayer3  entity: 1
+B received pkt0 from A
+B Sent ACK0 to A
+
+EVENT time: 5341.129395,  type: 2, fromlayer3  entity: 0
+A Recevied ACK0 from B
+
+EVENT time: 5430.553711,  type: 1, fromlayer5  entity: 0
+A Sent pck1 to B
+
+EVENT time: 5433.284180,  type: 2, fromlayer3  entity: 1
+B received pkt1 from A
+B Sent ACK1 to A
+          TOLAYER3: packet being corrupted
+
+EVENT time: 5435.650391,  type: 2, fromlayer3  entity: 0
+Packet from B was Corrupted
+
+EVENT time: 5453.284180,  type: 0, timerinterrupt   entity: 1
+ACK Timed Out
+B ReSent ACK1 to A
+          TOLAYER3: packet being lost
+
+EVENT time: 5473.284180,  type: 0, timerinterrupt   entity: 1
+ACK Timed Out
+B ReSent ACK1 to A
+          TOLAYER3: packet being lost
+
+EVENT time: 5493.284180,  type: 0, timerinterrupt   entity: 1
+ACK Timed Out
+B ReSent ACK1 to A
+
+EVENT time: 5499.533203,  type: 2, fromlayer3  entity: 0
+A Recevied ACK1 from B
+
+EVENT time: 6548.253906,  type: 1, fromlayer5  entity: 0
+A Sent pck0 to B
+          TOLAYER3: packet being lost
+
+EVENT time: 6568.253906,  type: 0, timerinterrupt   entity: 0
+A Timed Out
+A ReSent pkt0 to B
+          TOLAYER3: packet being corrupted
+
+EVENT time: 6574.091797,  type: 2, fromlayer3  entity: 1
+Packet from A was corrupted
+
+EVENT time: 7926.439453,  type: 1, fromlayer5  entity: 0
+A Sent pck0 to B
+          TOLAYER3: packet being lost
+
+EVENT time: 7946.439453,  type: 0, timerinterrupt   entity: 0
+A Timed Out
+A ReSent pkt0 to B
+
+EVENT time: 7947.498047,  type: 2, fromlayer3  entity: 1
+B received pkt0 from A
+B Sent ACK0 to A
+          TOLAYER3: packet being lost
+
+EVENT time: 7967.498047,  type: 0, timerinterrupt   entity: 1
+ACK Timed Out
+B ReSent ACK0 to A
+
+EVENT time: 7972.771973,  type: 2, fromlayer3  entity: 0
+A Recevied ACK0 from B
+
+EVENT time: 9872.939453,  type: 1, fromlayer5  entity: 0
+A Sent pck1 to B
+
+EVENT time: 9881.720703,  type: 2, fromlayer3  entity: 1
+B received pkt1 from A
+B Sent ACK1 to A
+          TOLAYER3: packet being lost
+
+EVENT time: 9901.720703,  type: 0, timerinterrupt   entity: 1
+ACK Timed Out
+B ReSent ACK1 to A
+          TOLAYER3: packet being lost
+
+EVENT time: 9921.720703,  type: 0, timerinterrupt   entity: 1
+ACK Timed Out
+B ReSent ACK1 to A
+          TOLAYER3: packet being corrupted
+
+EVENT time: 9921.891602,  type: 1, fromlayer5  entity: 0
+A Sent pck1 to B
+
+EVENT time: 9926.540039,  type: 2, fromlayer3  entity: 0
+Packet from B was Corrupted
+
+EVENT time: 9929.010742,  type: 2, fromlayer3  entity: 1
+B received pkt1 from A
+B Sent ACK1 to A
+Warning: attempt to start a timer that is already started
+
+EVENT time: 9930.288086,  type: 2, fromlayer3  entity: 0
+A Recevied ACK1 from B
+
+EVENT time: 11787.687500,  type: 1, fromlayer5  entity: 0
+A Sent pck0 to B
+          TOLAYER3: packet being corrupted
+
+EVENT time: 11789.959961,  type: 2, fromlayer3  entity: 1
+ Simulator terminated at time 11789.959961
+ after sending 10 msgs from layer5

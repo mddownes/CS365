@@ -280,8 +280,8 @@ def file_name(info_array):
 def main():
   #checks for right amount of arguments and opens file
   if len(sys.argv) == 3:
-    fd = open_file(sys.argv[1])
-    istat(fd,sys.argv[2])
+    fd = open_file(sys.argv[2])
+    istat(fd,sys.argv[1])
   else:
     usage()
 
